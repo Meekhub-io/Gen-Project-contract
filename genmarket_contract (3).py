@@ -268,8 +268,7 @@ class GenMarket(gl.Contract):
         stored.status = "disputed"
         stored.dispute_reason = reason
 
-    @staticmethod
-    def _extract_urls(text: str) -> list:
+    def _extract_urls(self, text: str) -> list:
         """Pure/deterministic — just parsing, safe to run outside the nondet block."""
         return re.findall(r"https?://[^\s\"'<>]+", text)
 
